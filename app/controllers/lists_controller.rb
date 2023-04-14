@@ -14,8 +14,9 @@ class ListsController < ApplicationController
     flash[:notice] = "投稿が成功しました"
     redirect_to list_path(list.id)
   end
-
+  
   def index
+    puts "作成したキー #{ENV['SECRET_KEY']}"
     @lists = List.all
   end
 
